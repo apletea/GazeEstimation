@@ -1,0 +1,9 @@
+[submodule "3rd/Simd"]
+	path = 3rd/Simd
+	url = https://github.com/ermig1979/Simd.git
+[submodule "3rd/cxxopts"]
+	path = 3rd/cxxopts
+	url = https://github.com/jarro2783/cxxopts.git
+[submodule "3rd/opencv"]
+	path = 3rd/opencv
+	url = https://github.com/opencv/opencv.git
