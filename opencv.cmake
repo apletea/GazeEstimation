@@ -36,15 +36,7 @@ ExternalProject_Add(opencv3
 
 include_directories(${OPENCV3_INSTALL_DIR}/include)
 
-set(OPENCV3_LIBS ${OPENCV3_INSTALL_DIR}/lib/libopencv_video.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_dnn.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_imgproc.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_core.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_ml.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_calib3d.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_features2d.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_flann.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_highgui.a
-                 ${OPENCV3_INSTALL_DIR}/lib/libopencv_imgcodecs.a)
-
+file(GLOB libs
+		"${OPENCV3_INSTALL_DIR}/lib/*.a")
+set(OPENCV3_LIBS ${libs})
 link_directories(${CMAKE_BINARY_DIR})

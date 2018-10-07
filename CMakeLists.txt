@@ -33,7 +33,7 @@ link_directories(${CMAKE_BINARY_DIR})
 
 file(GLOB gazeSRC
            "src/*.cpp")
-add_library(${PROJECT_NAME} SHARED ${gazeSRC})
+   add_library(${PROJECT_NAME} STATIC  ${gazeSRC})
 
 
 message(" ${OPENCV3_LIBS}")
@@ -44,6 +44,6 @@ add_executable(demo
                ${PROJECT_SOURCE_DIR}/demo/main.cpp)
 add_dependencies(demo opencv3 Simd ${PROJECT_NAME})
 link_directories(${CMAKE_BINARY_DIR})
-target_link_libraries(demo ${PROJECT_NAME}  ${OPENCV3_LIBS} ${SIMD_LIB} gcc -ldl -lz -lpthread)
+target_link_libraries(demo ${PROJECT_NAME}  )
 
 
