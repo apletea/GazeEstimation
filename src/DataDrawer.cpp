@@ -33,7 +33,7 @@ namespace GAZE
 			if (true)
 			{
                 cv::imshow("frame", frame);
-				cv::waitKey();
+				cv::waitKey(40);
 			}
 		}
 }

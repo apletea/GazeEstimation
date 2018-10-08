@@ -5,10 +5,6 @@ namespace GAZE
 
 	bool Workflow::ReInitScene()
 	{
-        LOG_RUN_TIME
-        LOG_RUN_TIME
-//        scenePtr->faceTemplatePath.resize((*res)["input_temp"].as<std::string>().size());
-//        scenePtr->faceTemplatePath = (*res)["input_temp"].as<std::string>();
         scenePtr.reset(new Scene(parmsPtr->faceTemplatePath));
         this->vc >> scenePtr->curFrame;
         LOG_RUN_TIME
@@ -20,7 +16,8 @@ namespace GAZE
 		LOG_RUN_TIME
 
 		scenePtr->drawerParams.showImg   = parmsPtr->drawerParams.showImg;
-
+        LOG_RUN_TIME
+		return true;
 	}
 
     bool Workflow::SetUpOpt(int argc, char ** argv)
@@ -37,10 +34,8 @@ namespace GAZE
 				("drawFaces","is drawer should draw faces",cxxopts::value<bool>()->default_value("true"))
 				("drawEyes","is drawer shoud draw eyes",cxxopts::value<bool>()->default_value("true"))
 				("showImg","is drawer should show img",cxxopts::value<bool>()->default_value("true"));
-		//auto res = options.parse(argc, argv);
         this->res = new cxxopts::ParseResult(options.parse(argc, argv));
 		this->vc.open((*res)["input_vid"].as<std::string>());
-        LOG_RUN_TIME
         parmsPtr.reset(new Scene((*res)["input_temp"].as<std::string>()));
         parmsPtr->drawerParams.drawFaces = (*res)["drawFaces"].as<bool>();
         parmsPtr->drawerParams.drawEyes  = (*res)["drawEyes"].as<bool>();
@@ -61,16 +56,11 @@ namespace GAZE
 
     bool Workflow::Run()
     {
-        LOG_RUN_TIME
 	    while (this->ReInitScene())
 		{
-            LOG_RUN_TIME
 			roiDetectorPtr->Run(*scenePtr);
-            LOG_RUN_TIME
             eyePointDetectorPtr->Run(*scenePtr);
-            LOG_RUN_TIME
-            dataWriterPtr->Run(*scenePtr);
-            LOG_RUN_TIME
+            dataDrawerPtr->Run(*scenePtr);
 			dataWriterPtr->Run(*scenePtr);
 		}	
     }
