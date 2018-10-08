@@ -1,6 +1,6 @@
 # GazeEstimation
 
-[![Linux build status](https://travis-ci.org/apletea/GazeEstimation.svg?branch=master](https://travis-ci.org/chronoxor/CppBenchmark)
+![Linux build status](https://travis-ci.org/apletea/GazeEstimation.svg?branch=master](https://travis-ci.org/chronoxor/CppBenchmark)
 
 This is a Gaze Detector 
 
