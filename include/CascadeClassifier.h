@@ -6,18 +6,17 @@
 #pragma once
 
 
-namespace GAZE
-{
-	typedef Simd::Detection<Simd::Allocator> Detection;
-	class CascadeClassifier
-	{
+namespace GAZE {
+typedef Simd::Detection<Simd::Allocator> Detection;
+class CascadeClassifier {
 
-	public:
-        CascadeClassifier(std::string cascadePath);
-		Detection::Objects  Detect(cv::Mat frame);
-	private:
-        bool inited;
-		Detection detection;
-	};
-	typedef std::shared_ptr<CascadeClassifier> CascadeClassifierPtr;
+    public:
+    CascadeClassifier (std::string cascadePath);
+    Detection::Objects Detect (cv::Mat frame);
+
+    private:
+    bool inited;
+    Detection detection;
+};
+typedef std::shared_ptr<CascadeClassifier> CascadeClassifierPtr;
 }

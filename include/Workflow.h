@@ -1,35 +1,34 @@
-#include <bits/stdc++.h>
-#include <opencv2/core/core.hpp>
-#include "Scene.h"
-#include "RoiDetector.h"
-#include "EyePointDetector.h"
 #include "DataDrawer.h"
 #include "DataWriter.h"
+#include "EyePointDetector.h"
+#include "RoiDetector.h"
+#include "Scene.h"
 #include "cxxopts.hpp"
+#include <bits/stdc++.h>
+#include <opencv2/core/core.hpp>
 #pragma once
 
-namespace GAZE
-{
-    class Workflow
-    {
-	public:
-        bool Init(int argc,char **  argv);
-        bool Run();
-	private:
-        bool SetUpOpt(int argc, char ** argv);
-		bool ReInitScene();
+namespace GAZE {
+class Workflow {
+    public:
+    bool Init (int argc, char** argv);
+    bool Run ();
 
-    	cv::VideoCapture vc;
-		cxxopts::ParseResult *res;
+    private:
+    bool SetUpOpt (int argc, char** argv);
+    bool ReInitScene ();
 
-		std::shared_ptr<cxxopts::Options> optsPtr;
-		ScenePtr scenePtr;
-		ScenePtr parmsPtr;
-		RoiDetectorPtr roiDetectorPtr;
-		EyePointDetectorPtr eyePointDetectorPtr;
-		DataDrawerPtr dataDrawerPtr;
-		DataWriterPtr dataWriterPtr;
-    };
+    cv::VideoCapture vc;
+    cxxopts::ParseResult* res;
 
-	typedef std::shared_ptr<Workflow> WorkflowPtr;
+    std::shared_ptr<cxxopts::Options> optsPtr;
+    ScenePtr scenePtr;
+    ScenePtr parmsPtr;
+    RoiDetectorPtr roiDetectorPtr;
+    EyePointDetectorPtr eyePointDetectorPtr;
+    DataDrawerPtr dataDrawerPtr;
+    DataWriterPtr dataWriterPtr;
+};
+
+typedef std::shared_ptr<Workflow> WorkflowPtr;
 }
