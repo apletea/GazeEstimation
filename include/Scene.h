@@ -9,6 +9,7 @@ namespace GAZE
 	{
     public:
 
+	    Scene(std::string path) : faceTemplatePath(path){}
 		std::string videoFilePath;
 		std::string faceTemplatePath;
 

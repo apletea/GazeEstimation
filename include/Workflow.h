@@ -22,12 +22,13 @@ namespace GAZE
     	cv::VideoCapture vc;
 		cxxopts::ParseResult *res;
 
+		std::shared_ptr<cxxopts::Options> optsPtr;
 		ScenePtr scenePtr;
+		ScenePtr parmsPtr;
 		RoiDetectorPtr roiDetectorPtr;
 		EyePointDetectorPtr eyePointDetectorPtr;
 		DataDrawerPtr dataDrawerPtr;
 		DataWriterPtr dataWriterPtr;
-	    std::shared_ptr<cxxopts::Options> optsPtr;	
     };
 
 	typedef std::shared_ptr<Workflow> WorkflowPtr;

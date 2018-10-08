@@ -10,7 +10,7 @@ namespace GAZE
 	    void DataDrawer::Run(Scene & scene)
 		{
 			cv::Mat frame(scene.curFrame);
-			if (scene.drawerParams.drawFaces)
+			if (true)
 			{
 				for (int i = 0; i < scene.faces.size(); i++)
 				{
@@ -21,7 +21,7 @@ namespace GAZE
 								                  cv::Scalar(255,0,0));
 				}
 			}
-			if (scene.drawerParams.drawEyes)
+			if (true)
 			{
                 for (int i = 0; i < scene.eyes.size(); i++)
 				{
@@ -30,10 +30,10 @@ namespace GAZE
 									4,cv::Scalar(0,255,0), -1);
 				}
 			}
-			if (scene.drawerParams.showImg)
+			if (true)
 			{
                 cv::imshow("frame", frame);
-				cv::waitKey(40);
+				cv::waitKey();
 			}
 		}
 }
