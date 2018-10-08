@@ -19,26 +19,6 @@ matrix:
             - graphviz
             - binutils-dev
             - uuid-dev
-    - os: linux
-      compiler: clang
-      env: OS=linux COMPILER=clang CLANG_VERSION=6.0
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-6.0
-          packages:
-            - clang-6.0
-            - libstdc++-8-dev
-            - cmake
-            - doxygen
-            - graphviz
-            - binutils-dev
-            - uuid-dev
-    - os: osx
-      compiler: clang
-      env: OS=osx COMPILER=clang
-
 # Using Trusty environment
 sudo: required
 dist: trusty
