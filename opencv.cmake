@@ -49,9 +49,9 @@ set(OpenCV_INCLUDE_DIRS ${open_cv_headers})
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 # include generated opencv headers
-include_directories(${PROJECT_SOURCE_DIR}/opencv/include)
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/opencv)
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/3rd/opencv/include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/3rd/opencv)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/3rd)
 
 # set all avaialbe libs to the OpenCV_LIBS variable
 SET(OpenCV_LIBS
