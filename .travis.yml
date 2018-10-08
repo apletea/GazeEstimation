@@ -5,8 +5,6 @@ language: cpp
 matrix:
   include:
     - os: linux
-      compiler: gcc
-      env: OS=linux COMPILER=gcc GCC_VERSION=8
       addons:
         apt:
           sources:
@@ -43,13 +41,6 @@ before_install:
   - git config --global user.email "travis@travis-ci.org"
   - git config --global push.default simple
   # gcc
-  - if [ "$OS" != "osx" ] && [ "$COMPILER" = "gcc" ]; then export CC="gcc-${GCC_VERSION}" CXX="g++-${GCC_VERSION}"; fi
-  # clang, libc++, libc++abi
-  - if [ "$OS" != "osx" ] && [ "$COMPILER" = "clang" ]; then export CC="clang-${CLANG_VERSION}" CXX="clang++-${CLANG_VERSION}"; fi
-  # brew, doxygen, graphviz
-  - if [ "$OS" == "osx" ]; then brew update; fi
-  - if [ "$OS" == "osx" ]; then brew install doxygen; fi
-  - if [ "$OS" == "osx" ]; then brew install graphviz; fi
 
 # Build scripts
 script: 
