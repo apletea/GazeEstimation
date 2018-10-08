@@ -34,7 +34,7 @@ add_subdirectory(${OPENCV3_DIR})
 
 # find opencv module headers and include them
 macro(find_opencv_headers return_list)
-    file(GLOB new_list ${PROJECT_SOURCE_DIR}/opencv/modules/**/*)
+    file(GLOB new_list ${PROJECT_SOURCE_DIR}/3rd/opencv/modules/**/*)
     get_filename_component(CMAKE_CURRENT_LIST_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
     set(dir_list "")
     FOREACH(file_path ${new_list})
