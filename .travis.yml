@@ -5,27 +5,9 @@ language: cpp
 matrix:
   include:
     - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-8
-            - g++-8
-            - cmake
-            - doxygen
-            - graphviz
-            - binutils-dev
-            - uuid-dev
-            - build-essential
-            - libgtk2.0-dev
-            - pkg-config
-            - libavcodec-dev 
-            - libavformat-dev 
-            - libswscale-dev
-# Using Trusty environment
-sudo: required
-dist: trusty
+      compiler: gcc
+     
+   
 
 # Branches to build
 branches:
@@ -35,6 +17,11 @@ branches:
 # Scripts that run before install
 before_install:
   # cmake
+  - sudo apt-get update
+  - sudo apt-get install -y build-essential
+  - sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+  - sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+
   - cmake --version
   # git
   - git config --global user.name "Travis CI"
@@ -52,4 +39,4 @@ script:
 # Don't send notifications on success
 notifications:
   email:
-on_success: never
+    on_success: never
