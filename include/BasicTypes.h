@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 
+#pragma once
 
 namespace GAZE
 {

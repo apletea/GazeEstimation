@@ -6,6 +6,7 @@
 #include "DataDrawer.h"
 #include "DataWriter.h"
 #include "cxxopts.hpp"
+#pragma once
 
 namespace GAZE
 {

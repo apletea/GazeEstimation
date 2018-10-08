@@ -1,6 +1,8 @@
 #include "Scene.h"
 #include "BasicTypes.h"
 #include "CascadeClassifier.h"
+#pragma once
+
 namespace GAZE
 {
 	class FaceFinder

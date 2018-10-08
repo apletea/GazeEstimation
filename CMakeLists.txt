@@ -37,8 +37,8 @@ file(GLOB gazeSRC
 
 
 message(" ${OPENCV3_LIBS}")
-add_dependencies(${PROJECT_NAME} opencv3 Simd)
-target_link_libraries(${PROJECT_NAME} ${OPENCV3_LIBS} ${SIMD_LIB} gcc -ldl -lz -lpthread)
+add_dependencies(${PROJECT_NAME} opencv Simd)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${SIMD_LIB} gcc -ldl -lz -lpthread)
 
 add_executable(demo
                ${PROJECT_SOURCE_DIR}/demo/main.cpp)

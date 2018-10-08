@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "Scene.h"
 #include "BasicTypes.h"
+#pragma once
 
 namespace GAZE
 {

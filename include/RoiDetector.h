@@ -1,5 +1,7 @@
 #include "BasicTypes.h"
 #include "FaceFinder.h"
+#pragma once
+
 namespace GAZE
 {
 	class RoiDetector

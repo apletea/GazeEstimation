@@ -15,6 +15,7 @@
 #define DARKPIXELVALUE 10
 //voting result threshold
 #define RESULTTHRESHOLD 3.0
+#pragma once
 
 namespace GAZE
 {

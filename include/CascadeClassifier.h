@@ -3,6 +3,7 @@
 #define SIMD_OPENCV_ENABLE
 #include <Simd/SimdDetection.hpp>
 #include <Simd/SimdDrawing.hpp>
+#pragma once
 
 
 namespace GAZE
