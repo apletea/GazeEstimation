@@ -1,6 +1,6 @@
 # GazeEstimation
 
-[![Linux build status](https://travis-ci.org/apletea/GazeEstimation.svg?branch=master)](https://travis-ci.org/apletea/GazeEstimation/builds/438575259)
+[![Linux build status](https://travis-ci.org/apletea/GazeEstimation.svg?branch=master)](https://travis-ci.org/apletea/GazeEstimation)
 
 This is a Gaze Detector 
 
