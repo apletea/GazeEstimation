@@ -9,22 +9,21 @@ void DataDrawer::Run (Scene& scene) {
     if (true) {
         for (int i = 0; i < scene.faces.size (); i++) {
             cv::rectangle (
-            frame, cv::Rect (scene.faces[i].first.first, scene.faces[i].first.second,
-                   scene.faces[i].second.first - scene.faces[i].first.first,
-                   scene.faces[i].second.second - scene.faces[i].first.second),
+            frame, scene.faces[i],
             cv::Scalar (255, 0, 0));
         }
     }
     if (true) {
-        for (int i = 0; i < scene.eyes.size (); i++) {
+        for (int i = 0; i < scene.detectedEyes.size(); i++) {
             cv::circle (frame,
-            cv::Point (scene.detectedEyes[i].first, scene.detectedEyes[i].second),
+            cv::Point (scene.detectedEyes[i]),
             4, cv::Scalar (0, 255, 0), -1);
+            std::cout << "i =" << i << "  x = " << scene.detectedEyes[i].x << " y =" << scene.detectedEyes[i].y << std::endl;
         }
     }
     if (true) {
         cv::imshow ("frame", frame);
-        cv::waitKey (40);
+        cv::waitKey ();
     }
 }
 }

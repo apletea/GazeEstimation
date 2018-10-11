@@ -9,7 +9,7 @@ class RoiDetector {
     bool Run (Scene& scene);
 
     private:
-    std::vector<Rect> LocalizeEye (std::vector<Rect> faces);
+    std::vector<Rect> LocalizeEye (std::vector<Rect> faces, const cv::Mat & frame);
 
     FaceFinderPtr faceFinder;
 };

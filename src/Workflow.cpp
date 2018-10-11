@@ -6,16 +6,7 @@ namespace GAZE {
 bool Workflow::ReInitScene () {
     scenePtr.reset (new Scene (parmsPtr->faceTemplatePath));
     this->vc >> scenePtr->curFrame;
-    LOG_RUN_TIME
-
-    scenePtr->drawerParams.drawFaces = parmsPtr->drawerParams.drawFaces;
-    LOG_RUN_TIME
-
-    scenePtr->drawerParams.drawEyes = parmsPtr->drawerParams.drawEyes;
-    LOG_RUN_TIME
-
     scenePtr->drawerParams.showImg = parmsPtr->drawerParams.showImg;
-    LOG_RUN_TIME
     return true;
 }
 

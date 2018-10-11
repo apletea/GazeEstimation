@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+#include <opencv2/core/core.hpp>
 
 #pragma once
 
 namespace GAZE {
-typedef std::pair<int, int> Point;
-typedef std::pair<Point, Point> Rect;
+typedef cv::Point Point;
+typedef cv::Rect Rect;
 }
