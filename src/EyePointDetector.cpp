@@ -36,7 +36,7 @@ bool EyePointDetector::Run (Scene& scene) {
     }
     return true;
 }
-
+//fix blur
 cv::Point EyePointDetector::EyePointDetect (cv::Mat & imeye, bool& is_locate_correct) {
     cv::Mat blurim;
     cv::GaussianBlur(imeye, blurim, cv::Size(9,9), 0);
