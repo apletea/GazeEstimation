@@ -2,9 +2,8 @@
 #include "Scene.h"
 #include "opencv2/imgproc/imgproc.hpp"
 #include <bits/stdc++.h>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/core/core.hpp"
+#include "opencv2/highgui/highgui.hpp"
 #define SIMD_OPENCV_ENABLE
 #include "Simd/SimdLib.hpp"
 
